@@ -14,11 +14,14 @@ int main()
 {
     char eingabe = 0;
     FILE *insults = 0;
-    if(insults = fopen("Insults.txt","r")){     //opening Insults.txt
+    if(insults = fopen("Insults.txt","r"))      //opening Insults.txt
+    {
 
-    }else{
-    fprintf(stderr,"Could not open Insult.txt!\nPlease make sure that Insult.txt is in the same folder with Vicious Mockery Generator!\n");
-    return 0;
+    }
+    else
+    {
+        fprintf(stderr,"Could not open Insult.txt!\nPlease make sure that Insult.txt is in the same folder with Vicious Mockery Generator!\n");
+        return 0;
     }
     char zeichen[2];
     long anzahl = 0;
@@ -51,7 +54,7 @@ int main()
         anzahl++;
     }
     while(stop);
-    printf("%d Insults found.\n",anzahl);       //Tells you how many insults are defined
+    printf("%ld Insults found.\n",anzahl);       //Tells you how many insults are defined
     srand(time(NULL));                          //seeds the pseudo random number generator with the actual time
     do
     {
@@ -68,7 +71,8 @@ int main()
         }
         else
         {
-            if(eingabe == 'q'){
+            if(eingabe == 'q')
+            {
                 break;                          //quitting the program
             }
             printf("I said \"ENTER\"...\n");
@@ -80,7 +84,8 @@ int main()
     return 0;
 }
 
-void insult(long rand, FILE *insults){          //pretty the same code as above, terminates when "rand" is found.
+void insult(long rand, FILE *insults)           //pretty the same code as above, terminates when "rand" is found.
+{
     char zeichen[2];
     long anzahl = 0;
     long stop = 1;
@@ -90,8 +95,6 @@ void insult(long rand, FILE *insults){          //pretty the same code as above,
         int durchlauf = 0;
         char *line = malloc(2*sizeof(char));
         char *newline;
-        char old;
-
         stop = fgets(zeichen,2,insults);
         i = (zeichen[0] == '\n') ? 0 : 1;
         strcpy(line,zeichen);
@@ -112,7 +115,8 @@ void insult(long rand, FILE *insults){          //pretty the same code as above,
         }
         while(i==1 && stop);
         anzahl++;
-        if(anzahl == rand){
+        if(anzahl == rand)
+        {
             stop = 0;
             printf("%s",line);
         }
