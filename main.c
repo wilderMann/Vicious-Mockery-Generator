@@ -60,7 +60,7 @@ int main()
     {
         fseek(insults,SEEK_SET,0);
         long random = 0;
-        printf("\nPress Enter to insult!\n...or q if you dont like fun.\n");
+        printf("\nPress Enter to insult!\nor press q to quit.\n");
         scanf("%c",&eingabe);
         (eingabe == '\n') ? :getc(stdin);
         if(eingabe == '\n')
