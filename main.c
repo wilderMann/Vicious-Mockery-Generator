@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#define CHECK printf("Line: %d\n", __LINE__);
-#define ERLOG fprintf(stderr,"Error in Line %d \n",__LINE__);
 
 /*
 IT IS NECESSARY THAT THERE IS A FILE NAMED Insults.txt IN THE SAME FOLDER AS THE .exe FILE!
@@ -30,11 +28,11 @@ int main()
     {
         int i = 0;
         int durchlauf = 0;
-        char *line = malloc(2*sizeof(char));
-        char *newline;
+        //char *line = malloc(2*sizeof(char));
+        //char *newline;
         stop = fgets(zeichen,2,insults);
         i = (zeichen[0] == '\n') ? 0 : 1;
-        strcpy(line,zeichen);
+        //strcpy(line,zeichen);
         do
         {
 
@@ -42,11 +40,11 @@ int main()
             stop = fgets(zeichen,2,insults);
             i = (zeichen[0] == '\n') ? 0 : 1;
 
-            newline = realloc(line, (durchlauf*2+3)*sizeof(char));
+            //newline = realloc(line, (durchlauf*2+3)*sizeof(char));
 
-            line = newline;
+            //line = newline;
 
-            strncat(line,zeichen,1);
+            //strncat(line,zeichen,1);
 
             durchlauf++;
         }
